@@ -1,0 +1,288 @@
+@font-face {
+  font-family: "Gotham Pro";
+  src: url("../fonts/gothampro.ttf");
+}
+@font-face {
+  font-family: "Gotham Pro Bold";
+  src: url("../fonts/gothampro_bold.ttf");
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #1c1624;
+  overflow: hidden;
+  font-family: "Gotham Pro", sans-serif;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  position: absolute;
+  margin: 0 auto;
+  width: 250px;
+  border: 1px solid #fae428;
+  color: #fae428;
+  border-radius: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.3em;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.2s ease;
+  line-height: 30px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  perspective-origin: 49% 50%;
+  padding: 24px 20px;
+}
+.button p {
+  transition: all 0.2s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  line-height: 33px;
+}
+
+.popup__wrapp {
+  transition: all 0.3s ease;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.popup__wrapp .popup {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  height: 449px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 20px;
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.popup__wrapp .popup__image {
+  background: #EFEFEF;
+  width: 310px;
+  height: 100%;
+}
+.popup__wrapp .popup__image__img {
+  position: absolute;
+  top: 0;
+  left: -36px;
+  right: 0;
+}
+.popup__wrapp .popup__image__arrow {
+  position: relative;
+  right: 0;
+  left: 129px;
+  bottom: 29px;
+}
+.popup__wrapp .popup__image .popup__image__bg__text {
+  font-family: "Gotham Pro Bold";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 92px;
+  max-width: 286px;
+  line-height: 88px;
+  text-align: right;
+  opacity: 0.1;
+  color: #000000;
+}
+.popup__wrapp .popup__info {
+  padding: 28px 58px 63px 59px;
+}
+.popup__wrapp .popup__info__question__title {
+  font-family: "Gotham Pro Bold", sans-serif;
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 23px;
+  text-transform: uppercase;
+  color: #0D0D0D;
+  text-align: center;
+  margin-bottom: 48px;
+}
+.popup__wrapp .popup__info__question__subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 13px;
+  text-align: center;
+  color: #0D0D0D;
+}
+.popup__wrapp .popup__info__title {
+  font-family: "Gotham Pro Bold", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 22px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #0D0D0D;
+  max-width: 323px;
+  margin: 6px auto;
+}
+.popup__wrapp .popup__info__subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 13px;
+  text-align: center;
+  max-width: 323px;
+  margin: 0 auto 15px auto;
+  color: #0D0D0D;
+}
+.popup__wrapp .popup__info__subtitle__last {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 11px;
+  color: #0D0D0D;
+  margin-bottom: 34px;
+}
+.popup__wrapp .popup__info__form__subtitle {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 11px;
+  color: #000000;
+  text-align: start;
+  margin-bottom: 6px;
+}
+.popup__wrapp .popup__info__form__input {
+  outline: none;
+  padding: 18px 15px;
+  width: 100%;
+  border: 2px solid #c1c1c1;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 13px;
+  color: #0D0D0D;
+}
+.popup__wrapp .popup__info__form__input::-moz-placeholder {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 13px;
+  color: #0D0D0D;
+}
+.popup__wrapp .popup__info__form__input::placeholder {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 13px;
+  color: #0D0D0D;
+}
+.popup__wrapp .popup__info__form__input:focus {
+  border: 2px solid #F3CE00;
+}
+.popup__wrapp .popup__info__form__button {
+  font-family: "Gotham Pro", sans-serif;
+  font-style: normal;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 16px;
+  margin-top: 15px;
+  width: 100%;
+  padding: 16px 34px;
+  line-height: 110%;
+  border: 0;
+  color: #FFFFFF;
+  background: linear-gradient(92.64deg, #FF5621 29.24%, #F21313 83.67%);
+  border-radius: 4px;
+}
+.popup__wrapp .popup__close {
+  position: absolute;
+  right: 19px;
+  top: 19px;
+}
+.popup__wrapp .popup__close button {
+  position: relative;
+  left: 10px;
+  right: 0px;
+  cursor: pointer;
+  width: 20px;
+  border: 0;
+  height: 20px;
+  border-radius: 100%;
+}
+
+#stars {
+  width: 2px;
+  height: 2px;
+  box-shadow: 144px 657px rgba(165,190,195,0.7) , 347px 1529px rgba(184,174,131,0.2) , 713px 461px rgba(184,174,131,0.7) , 1088px 1776px rgba(184,174,131,0.1) , 1442px 1868px rgba(184,174,131,0.9) , 762px 739px rgba(184,174,131,0.6) , 629px 755px rgba(184,174,131,0.6) , 1642px 1450px rgba(184,174,131,0.6) , 590px 1122px rgba(184,174,131,0.6) , 124px 1309px rgba(184,174,131,0.7) , 1200px 154px rgba(184,174,131,0.8) , 139px 1337px rgba(184,174,131,0.5) , 818px 1167px rgba(184,174,131,0.9) , 1144px 441px rgba(184,174,131,0.9) , 1424px 1793px rgba(184,174,131,0.1) , 831px 651px rgba(184,174,131,0.2) , 244px 2000px rgba(184,174,131,0.4) , 937px 964px rgba(184,174,131,0.1) , 1785px 1064px rgba(184,174,131,0.7) , 129px 364px rgba(184,174,131,0.4) , 377px 1845px rgba(184,174,131,0.5) , 1204px 1169px rgba(184,174,131,0.6) , 784px 1889px rgba(184,174,131,0.7) , 101px 1333px rgba(184,174,131,0.2) , 1954px 1650px rgba(184,174,131,0.1) , 1821px 229px rgba(184,174,131,0.2) , 1799px 520px rgba(184,174,131,1) , 1840px 235px rgba(184,174,131,0.9) , 1559px 771px rgba(184,174,131,0.1) , 1301px 1617px rgba(184,174,131,0.3) , 1175px 1983px rgba(184,174,131,0.6) , 1682px 876px rgba(184,174,131,0.5) , 1138px 1868px rgba(184,174,131,0.7) , 467px 872px rgba(184,174,131,0.7) , 1085px 363px rgba(184,174,131,0.3) , 1342px 1439px rgba(184,174,131,0.9) , 1501px 863px rgba(184,174,131,1) , 1821px 293px rgba(184,174,131,1) , 1735px 1819px rgba(184,174,131,0.5) , 1777px 146px rgba(184,174,131,0.6) , 1354px 369px rgba(184,174,131,0.5) , 318px 217px rgba(184,174,131,0.4) , 1201px 1354px rgba(184,174,131,0.2) , 199px 360px rgba(184,174,131,0.1) , 1110px 259px rgba(184,174,131,0.7) , 1914px 1491px rgba(184,174,131,0.8) , 1656px 151px rgba(184,174,131,0.7) , 730px 121px rgba(184,174,131,0.4) , 1806px 1068px rgba(184,174,131,0.1) , 369px 223px rgba(184,174,131,0.7) , 1242px 547px rgba(184,174,131,0.3) , 1137px 1293px rgba(184,174,131,0.4) , 584px 1489px rgba(184,174,131,0.9) , 837px 376px rgba(184,174,131,0.8) , 1636px 1474px rgba(184,174,131,0.6) , 285px 153px rgba(184,174,131,0.8) , 243px 1474px rgba(184,174,131,0.3) , 201px 815px rgba(184,174,131,0.3) , 1834px 356px rgba(184,174,131,1) , 298px 1700px rgba(184,174,131,0.6) , 1685px 1561px rgba(184,174,131,0.5) , 1941px 117px rgba(184,174,131,1) , 326px 500px rgba(184,174,131,1) , 1811px 1614px rgba(184,174,131,0.3) , 95px 1761px rgba(184,174,131,0.4) , 1429px 1227px rgba(184,174,131,0.2) , 1899px 124px rgba(184,174,131,0.4) , 1364px 894px rgba(184,174,131,0.4) , 1968px 450px rgba(184,174,131,0.4) , 1935px 1909px rgba(184,174,131,0.3) , 364px 1px rgba(184,174,131,0.4) , 1504px 135px rgba(184,174,131,0.5) , 402px 837px rgba(184,174,131,0.9) , 479px 1565px rgba(184,174,131,0.8) , 877px 820px rgba(184,174,131,0.6) , 1398px 1547px rgba(184,174,131,0.1) , 1064px 460px rgba(184,174,131,0.9) , 1705px 874px rgba(184,174,131,0.1) , 533px 582px rgba(184,174,131,0.8) , 873px 1078px rgba(184,174,131,1) , 419px 1542px rgba(184,174,131,0.4) , 376px 414px rgba(184,174,131,0.4) , 375px 1657px rgba(184,174,131,0.7) , 1574px 182px rgba(184,174,131,0.4) , 1498px 180px rgba(184,174,131,0.3) , 1886px 1304px rgba(184,174,131,0.9) , 1000px 100px rgba(184,174,131,0.6) , 1955px 1414px rgba(184,174,131,0.5) , 650px 379px rgba(184,174,131,0.3) , 1243px 156px rgba(184,174,131,1) , 1640px 391px rgba(184,174,131,0.5) , 1837px 785px rgba(184,174,131,0.1) , 1137px 1328px rgba(184,174,131,0.6) , 661px 18px rgba(184,174,131,0.8) , 649px 825px rgba(184,174,131,0.1) , 1985px 833px rgba(184,174,131,0.9) , 585px 1801px rgba(184,174,131,0.2) , 282px 1905px rgba(184,174,131,0.8) , 1946px 1641px rgba(184,174,131,0.4) , 1385px 877px rgba(184,174,131,0.3) , 227px 980px rgba(184,174,131,0.7) , 1524px 1065px rgba(184,174,131,1);
+  background: transparent;
+  border-radius: 100%;
+  -webkit-animation: blink 2s infinite;
+          animation: blink 2s infinite;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#stars2 {
+  width: 3px;
+  height: 3px;
+  box-shadow: 1935px 609px rgba(165,190,195,0.6) , 272px 1388px rgba(184,174,131,0.3) , 1524px 623px rgba(184,174,131,1) , 1842px 811px rgba(184,174,131,1) , 1886px 1778px rgba(184,174,131,0.9) , 867px 1822px rgba(184,174,131,0.9) , 1854px 821px rgba(184,174,131,0.3) , 1196px 509px rgba(184,174,131,0.1) , 619px 759px rgba(184,174,131,0.3) , 234px 1542px rgba(184,174,131,0.4) , 1644px 209px rgba(184,174,131,1) , 1052px 1909px rgba(184,174,131,0.6) , 1905px 1129px rgba(184,174,131,0.6) , 586px 1565px rgba(184,174,131,0.4) , 1429px 1371px rgba(184,174,131,0.8) , 1892px 1797px rgba(184,174,131,0.4) , 553px 432px rgba(184,174,131,0.5) , 1509px 1686px rgba(184,174,131,0.5) , 826px 1975px rgba(184,174,131,0.1) , 1971px 1262px rgba(184,174,131,0.1) , 954px 828px rgba(184,174,131,0.1) , 1239px 857px rgba(184,174,131,0.5) , 791px 892px rgba(184,174,131,1) , 1615px 1592px rgba(184,174,131,0.9) , 1704px 1357px rgba(184,174,131,0.4) , 190px 1419px rgba(184,174,131,0.9) , 1612px 1424px rgba(184,174,131,0.4) , 1453px 457px rgba(184,174,131,0.3) , 1631px 1386px rgba(184,174,131,0.3) , 796px 1474px rgba(184,174,131,0.9) , 1341px 751px rgba(184,174,131,0.2) , 1128px 1024px rgba(184,174,131,0.5) , 1077px 490px rgba(184,174,131,0.7) , 313px 700px rgba(184,174,131,0.4) , 941px 1059px rgba(184,174,131,0.3) , 768px 178px rgba(184,174,131,0.2) , 167px 1815px rgba(184,174,131,0.8) , 1453px 1757px rgba(184,174,131,1) , 276px 1897px rgba(184,174,131,0.6) , 1766px 1004px rgba(184,174,131,1) , 1695px 215px rgba(184,174,131,0.7) , 1270px 312px rgba(184,174,131,1) , 1576px 1182px rgba(184,174,131,0.1) , 212px 1097px rgba(184,174,131,0.8) , 702px 208px rgba(184,174,131,0.9) , 376px 95px rgba(184,174,131,0.1) , 1420px 36px rgba(184,174,131,0.6) , 810px 429px rgba(184,174,131,0.7) , 1597px 827px rgba(184,174,131,0.8) , 738px 123px rgba(184,174,131,0.3) , 370px 230px rgba(184,174,131,0.2) , 166px 483px rgba(184,174,131,0.8);
+  background: transparent;
+  border-radius: 100%;
+  -webkit-animation: blink 4s infinite;
+          animation: blink 4s infinite;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#stars3 {
+  width: 4px;
+  height: 4px;
+  box-shadow: 1435px 1100px rgba(165,190,195,0.1) , 788px 1393px rgba(184,174,131,0.9) , 1849px 562px rgba(184,174,131,1) , 253px 820px rgba(184,174,131,0.4) , 956px 1165px rgba(184,174,131,0.8) , 1690px 871px rgba(184,174,131,0.8) , 666px 618px rgba(184,174,131,0.9) , 285px 1844px rgba(184,174,131,1) , 890px 1603px rgba(184,174,131,0.9) , 609px 370px rgba(184,174,131,0.5) , 1167px 6px rgba(184,174,131,0.5) , 1988px 1340px rgba(184,174,131,0.8) , 1532px 1748px rgba(184,174,131,0.7) , 646px 1165px rgba(184,174,131,0.2) , 1001px 1111px rgba(184,174,131,0.9) , 334px 1058px rgba(184,174,131,0.2) , 670px 1251px rgba(184,174,131,1) , 1174px 1278px rgba(184,174,131,0.5) , 425px 1086px rgba(184,174,131,0.3) , 926px 1894px rgba(184,174,131,0.5) , 152px 1754px rgba(184,174,131,0.1) , 1261px 875px rgba(184,174,131,0.4) , 983px 131px rgba(184,174,131,0.3) , 178px 210px rgba(184,174,131,0.1) , 193px 582px rgba(184,174,131,0.9) , 77px 1204px rgba(184,174,131,0.9) , 379px 521px rgba(184,174,131,0.3) , 405px 1432px rgba(184,174,131,0.4) , 572px 1316px rgba(184,174,131,0.4) , 624px 1036px rgba(184,174,131,0.5) , 786px 1627px rgba(184,174,131,0.2) , 1577px 969px rgba(184,174,131,0.5) , 1437px 1821px rgba(184,174,131,0.6) , 471px 1239px rgba(184,174,131,0.5) , 1298px 905px rgba(184,174,131,0.7) , 1045px 175px rgba(184,174,131,0.3) , 1909px 33px rgba(184,174,131,0.4) , 1082px 127px rgba(184,174,131,0.5) , 463px 246px rgba(184,174,131,0.2) , 405px 1592px rgba(184,174,131,0.1) , 912px 675px rgba(184,174,131,0.2) , 54px 1470px rgba(184,174,131,0.7) , 1717px 168px rgba(184,174,131,0.6) , 1692px 1316px rgba(184,174,131,0.8) , 787px 1936px rgba(184,174,131,0.8) , 1456px 1371px rgba(184,174,131,0.7) , 903px 720px rgba(184,174,131,1) , 861px 10px rgba(184,174,131,0.9) , 1242px 890px rgba(184,174,131,0.3) , 1004px 1465px rgba(184,174,131,0.2) , 1394px 525px rgba(184,174,131,0.7) , 1260px 830px rgba(184,174,131,0.3) , 1442px 552px rgba(184,174,131,0.1) , 1344px 1553px rgba(184,174,131,0.3) , 1665px 1366px rgba(184,174,131,0.1) , 542px 251px rgba(184,174,131,0.7) , 378px 1262px rgba(184,174,131,0.6) , 1183px 561px rgba(184,174,131,0.2) , 873px 1213px rgba(184,174,131,0.8) , 578px 1312px rgba(184,174,131,0.1) , 1523px 1022px rgba(184,174,131,0.4) , 525px 1232px rgba(184,174,131,0.2) , 1321px 1964px rgba(184,174,131,0.2) , 686px 519px rgba(184,174,131,0.3) , 1045px 576px rgba(184,174,131,0.4) , 27px 378px rgba(184,174,131,0.4) , 1138px 861px rgba(184,174,131,0.1) , 1548px 545px rgba(184,174,131,0.1) , 1479px 778px rgba(184,174,131,0.3) , 131px 258px rgba(184,174,131,1) , 1679px 611px rgba(184,174,131,0.7) , 1456px 1723px rgba(184,174,131,0.3) , 1727px 1929px rgba(184,174,131,0.7) , 1265px 1039px rgba(184,174,131,0.9) , 267px 1288px rgba(184,174,131,0.8) , 1598px 236px rgba(184,174,131,0.6) , 1093px 1821px rgba(184,174,131,0.5) , 1929px 1666px rgba(184,174,131,1) , 1785px 935px rgba(184,174,131,0.5) , 460px 1442px rgba(184,174,131,0.6) , 1319px 882px rgba(184,174,131,0.2) , 1094px 251px rgba(184,174,131,1) , 887px 1839px rgba(184,174,131,0.4) , 1241px 1876px rgba(184,174,131,0.1) , 1087px 460px rgba(184,174,131,0.4) , 771px 496px rgba(184,174,131,0.6) , 615px 1960px rgba(184,174,131,1) , 688px 1131px rgba(184,174,131,0.7) , 1694px 470px rgba(184,174,131,0.1) , 437px 1897px rgba(184,174,131,0.2) , 559px 1878px rgba(184,174,131,1) , 1172px 1736px rgba(184,174,131,0.3) , 128px 1034px rgba(184,174,131,0.9) , 899px 1566px rgba(184,174,131,0.5) , 340px 853px rgba(184,174,131,0.3) , 519px 1798px rgba(184,174,131,0.6) , 992px 953px rgba(184,174,131,0.7) , 1031px 832px rgba(184,174,131,0.1) , 319px 1503px rgba(184,174,131,0.8) , 509px 1342px rgba(184,174,131,0.8) , 453px 1488px rgba(184,174,131,0.2) , 1274px 966px rgba(184,174,131,0.5);
+  background: transparent;
+  border-radius: 100%;
+  -webkit-animation: blink 3s infinite;
+          animation: blink 3s infinite;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=style.css.map */

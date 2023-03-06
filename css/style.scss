@@ -1,0 +1,303 @@
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('../fonts/gothampro.ttf');
+}
+
+@font-face {
+  font-family: 'Gotham Pro Bold';
+  src: url('../fonts/gothampro_bold.ttf');
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #1c1624;
+  overflow: hidden;
+  font-family: 'Gotham Pro', sans-serif;
+  transform-style: preserve-3d;
+  display: flex;
+	justify-content: center;
+  align-items: center;
+}
+
+.button {
+  position: absolute;
+  margin: 0 auto;
+  width: 250px;
+  border: 1px solid #fae428;
+  color: #fae428;
+  border-radius: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.3em;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.2s ease;
+  line-height: 30px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  perspective-origin: 49% 50%;
+  padding: 24px 20px;
+
+  p {
+    transition: all 0.2s ease;
+    user-select: none;
+    line-height: 33px;
+  }
+}
+
+.popup__wrapp {
+  transition: all 0.3s ease;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  .popup {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    height: 449px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 20px;
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #fff;
+
+    &__image {
+      background: #EFEFEF;
+      width: 310px;
+      height: 100%;
+
+      &__img {
+        position: absolute;
+        top: 0;
+        left: -36px;
+        right: 0;
+      }
+
+      &__arrow {
+        position: relative;
+        right: 0;
+        left: 129px;
+        bottom: 29px;
+      }
+
+      .popup__image__bg__text {
+        font-family: 'Gotham Pro Bold';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 92px;
+        max-width: 286px;
+        line-height: 88px;
+        text-align: right;
+        opacity: 0.1;
+        color: #000000;
+      }
+    }
+
+    &__info {
+      padding: 28px 58px 63px 59px;
+
+      &__question__title {
+        font-family: 'Gotham Pro Bold', sans-serif;
+        font-weight: 900;
+        font-size: 34px;
+        line-height: 23px;
+        text-transform: uppercase;
+        color: #0D0D0D;
+        text-align: center;
+        margin-bottom: 48px;
+      }
+
+      &__question__subtitle {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 13px;
+        text-align: center;
+        color: #0D0D0D;
+      }
+
+      &__title {
+        font-family: 'Gotham Pro Bold', sans-serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 20px;
+        line-height: 22px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #0D0D0D;
+        max-width: 323px;
+        margin: 6px auto;
+      }
+
+      &__subtitle {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 13px;
+        text-align: center;
+        max-width: 323px;
+        margin: 0 auto 15px auto;
+        color: #0D0D0D;
+      }
+
+      &__subtitle__last {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 11px;
+        color: #0D0D0D;
+        margin-bottom: 34px;
+      }
+
+      &__form {
+        &__subtitle {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 11px;
+          color: #000000;
+          text-align: start;
+          margin-bottom: 6px;
+        }
+
+        &__input {
+          outline: none;
+          padding: 18px 15px;
+          width: 100%;
+          border: 2px solid #c1c1c1;
+          border-radius: 4px;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 13px;
+          color: #0D0D0D;
+
+          &::placeholder {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 13px;
+            color: #0D0D0D;
+          }
+
+          &:focus {
+            border: 2px solid #F3CE00;
+          }
+        }
+
+        &__button {
+          font-family: 'Gotham Pro', sans-serif;
+          font-style: normal;
+          cursor: pointer;
+          text-transform: uppercase;
+          font-weight: 900;
+          font-size: 16px;
+          margin-top: 15px;
+          width: 100%;
+          padding: 16px 34px;
+          line-height: 110%;
+          border: 0;
+          color: #FFFFFF;
+          background: linear-gradient(92.64deg, #FF5621 29.24%, #F21313 83.67%);
+          border-radius: 4px;
+        }
+      }
+    }
+
+    &__close {
+      position: absolute;
+      right: 19px;
+      top: 19px;
+
+      button {
+        position: relative;
+        left: 10px;
+        right: 0px;
+        cursor: pointer;
+        width: 20px;
+        border: 0;
+        height: 20px;
+        border-radius: 100%;
+      }
+    }
+  }
+}
+
+
+
+@function generateStart($n) {
+	$value: "#{random(2000)}px #{random(2000)}px rgba(165,190,195,#{random(10)/10})";
+	@for $i from 0 through $n {
+		$value: "#{$value} , #{random(2000)}px #{random(2000)}px rgba(184,174,131,#{random(10)/10})";
+	}
+	@return unquote($value);
+}
+
+$shadows-small: generateStart(100);
+$shadows-medium: generateStart(50);
+$shadows-big: generateStart(100);
+
+#stars {
+	width: 2px;
+	height: 2px;
+	box-shadow: $shadows-small;
+	background: transparent;
+	border-radius: 100%;
+	animation: blink 2s infinite;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#stars2 {
+	width: 3px;
+	height: 3px;
+	box-shadow: $shadows-medium;
+	background: transparent;
+	border-radius: 100%;
+	animation: blink 4s infinite;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#stars3 {
+	width: 4px;
+	height: 4px;
+	box-shadow: $shadows-big;
+	background: transparent;
+	border-radius: 100%;
+	animation: blink 3s infinite;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.2;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
